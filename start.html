@@ -3,37 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    start of the project
-    <h1>Rock Paper Scissors</h1>
-    <button onclick="play('rock')">Rock</button>
-    <button onclick="play('paper')">Paper</button>
-    <button onclick="play('scissors')">Scissors</button>
-
-    <div id="result"></div>
-
-    <script>
-        function play(userChoice) {
-            const choices = ['rock', 'paper', 'scissors'];
-            const computerChoice = choices[Math.floor(Math.random() * choices.length)];
-            let result = '';
-
-            if (userChoice === computerChoice) {
-                result = `It's a tie! Both chose ${userChoice}.`;
-            } else if (
-                (userChoice === 'rock' && computerChoice === 'scissors') ||
-                (userChoice === 'paper' && computerChoice === 'rock') ||
-                (userChoice === 'scissors' && computerChoice === 'paper')
-            ) {
-                result = `You win! ${userChoice} beats ${computerChoice}.`;
-            } else {
-                result = `You lose! ${computerChoice} beats ${userChoice}.`;
-            }
-
-            document.getElementById('result').innerText = result;
-        }
-    </script>    
+    <div class="container">
+        <h1>Rock Paper Scissors</h1>
+        <div class="choices">
+            <button class="btn" id="rock">Rock</button>
+            <button class="btn" id="paper">Paper</button>
+            <button class="btn" id="scissors">Scissors</button>
+        </div>
+        <div class="result">
+            <h2 id="resultText"></h2>
+        </div>
+    </div>
+    <script src="start.js"></script>
 </body>
 </html>
